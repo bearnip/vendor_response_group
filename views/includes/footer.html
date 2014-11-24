@@ -1,0 +1,64 @@
+	
+		</div><!-- end of containter -->
+		<div id="footer">
+				<div id="footerLeft">
+					&copy; 2014 CompSci400&#8482; All Rights Reserved.
+				</div>
+				<div id="footerRight">
+					<span class="logoGreen">who</span>.<span class="logoBlue">me</span>
+				</div>
+			</div>
+			
+		</div>
+		
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    	<!-- Include all compiled plugins (below), or include individual files as needed -->
+    	<script src="views/style/js/parsley.min.js"></script>
+
+		
+		<script>
+
+			$('#responseForm').parsley();
+			
+			$('#home').click(function(){
+				$('#home').css({"backgroundColor" : "black"});
+			});
+
+
+
+			var formOpen = false;
+
+			 
+
+			$("#doResponse").click(function(){
+				$("#slideUp").fadeIn("fast");
+				//$("#slideUp").animate({ "top" : "0%"});
+				//$("#slideUp").animate({ "width" : "50%"});
+			});
+
+			$("#closeForm").click(function(){
+				$("#slideUp").fadeOut();
+			})
+
+			var i = 1; 
+
+
+    		$("#addPartner").click(function(){
+
+    			if( i < 8 ){
+
+    				$("#vendorPartnerInputs").append("<div class='form-group'><label class='col-xs-3' for='vendorPartner1'>Vendor Partner</label><input type='text' class='form-control' name='vP" + i + "'></div>");
+
+    				i++;
+
+    			}
+    			
+    	
+    		});
+		
+		</script> 
+	
+		
+	</body>
+</html>
