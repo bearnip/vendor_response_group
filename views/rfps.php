@@ -8,29 +8,28 @@
 
 
           <table class="table">
-        	<tr><th>Title</th><th>Podium</th><th>Projection</th><th>Seats</th><th>Stadium</th>
-        	<th>Completion Date</th><th>HQ Audio</th></tr>
+        	<tr><th>Summary</th><th>Projection</th><th>Length</th><th>Width</th><th>Completion Date</th>
+        	<th>View Full Details</th></tr>
 
         	<?php 
-        	foreach($allRfps as $rfp){
+        	foreach($rfp_cursor as $rfp){
 
-        		$hq = ($rfp["hqAudio"]==true ? "Yes" : "No");
-        		$stadium = ( $rfp["stadium"]==true ? "Yes" : "No");
+        		$hq = ($rfp["audio"] == true ? "Yes" : "No");
 
         		echo "<tr>";
         		//echo "<td>" . $rfp["RfpNum"] . "</td>"; 
-        		echo "<td>" . $rfp["title"] . "</td>";
-        		echo "<td>" . $rfp["podiumType"] . "</td>";
-        		echo "<td>" . $rfp["projection"] . "</td>";
-        		echo "<td>" . $rfp["seats"] . "</td>";
-        		echo "<td>" . $stadium . "</td>";
-        		echo "<td>" . $rfp["compDate"] . "</td>";    /********** Format This *********/
+        		echo "<td>" . $rfp["summary"] . "</td>";
+                echo "<td>" . $rfp["projection"][0] . "</td>";
+        		echo "<td>" . $rfp["length"] . "</td>";
+                echo "<td>" . $rfp["width"] . "</td>";
+        		echo "<td>" . $rfp["compdate"] . "</td>"; 
         		//echo "<td>" . $rfp["size"]["length"] . "x" . $rfp["size"]["width"] .  "x" . $rfp["size"]["height"] . "</td>";
 				echo '<td><form action = "." method="POST">
 							<input type="hidden" name="action" value="viewSingleRfp">
-							<input type="hidden" name="RfpNum" value="' . $rfp["RfpNum"] . '">
+							<input type="hidden" name="RfpNum" value="' . $rfp["rfpnum"] . '">
 							<input type="submit" class="btn respondButton" value="View">
 						</form></td></tr>'; 
+            
 
         	}?>
 
