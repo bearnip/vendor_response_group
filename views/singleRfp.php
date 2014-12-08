@@ -10,21 +10,22 @@
 		<h2 class="sectionTitle"><?php echo $rfp["rfpnum"]; ?> </h2>
 
 		<table class="table">
-			<tr><th>Summary</th>			<td><?php echo $rfp["summary"] ?></td></tr>
-			<tr><th>Contact</th>			<td><?php echo $rfp["contact"] ?></td></tr>
-			<tr><th>Email</th>				<td><?php echo $rfp["email"] ?></td></tr>
-			<tr><th>Phone</th>				<td><?php echo $rfp["phone"] ?></td></tr>
-			<tr><th>Purpose</th>			<td><?php echo $rfp["purpose"]?></td></tr>
-			<tr><th>Audio</th>				<td><?php echo $rfp["audio"] ?></td></tr>
-			<tr><th>Seats</th>				<td><?php echo $rfp["seats"] ?></td></tr>
-			<tr><th>Projection</th>			<td><?php echo $rfp["projection"][0] ?></td></tr>
-			<tr><th>Podium</th>				<td><?php echo $rfp["podium"][0] ?></td></tr>
-			<tr><th>Class Number</th>		<td><?php echo $rfp["classnum"] ?></td></tr>
-			<tr><th>Length</th>				<td><?php echo $rfp["length"] ?></td></tr>
-			<tr><th>Width</th>				<td><?php echo $rfp["height"] ?></td></tr>
-			<tr><th>Height</th>				<td><?php echo $rfp["width"]  ?></td></tr>
-			<tr><th>Budget</th>				<td><?php echo $rfp["budget"] ?></td></tr>
-			<tr><th>Completetion Date</th>	<td><?php echo $rfp["compdate"]?></td></tr>
+
+			<tr><th>Summary</th>			<td><?php if(isset($rfp["summary"])){echo $rfp["summary"];} ?></td></tr>
+			<tr><th>Contact</th>			<td><?php if(isset($rfp["contact"])){echo $rfp["contact"];} ?></td></tr>
+			<tr><th>Email</th>				<td><?php if(isset($rfp["email"])){echo $rfp["email"];} ?></td></tr>
+			<tr><th>Phone</th>				<td><?php if(isset($rfp["phone"])){echo $rfp["phone"];} ?></td></tr>
+			<tr><th>Purpose</th>			<td><?php if(isset($rfp["purpose"])){echo $rfp["purpose"];}?></td></tr>
+			<tr><th>Audio</th>				<td><?php if(isset($rfp["audio"])){ $rfp["audio"];} ?></td></tr>
+			<tr><th>Seats</th>				<td><?php if(isset($rfp["seats"])){echo $rfp["seats"];} ?></td></tr>
+			<tr><th>Projection</th>			<td><?php if(isset($rfp["projection"])){echo $rfp["projection"][0];} ?></td></tr>
+			<tr><th>Podium</th>				<td><?php if(isset($rfp["podium"][0])){echo $rfp["podium"][0];} ?></td></tr>
+			<tr><th>Class Number</th>		<td><?php if(isset($rfp["classnum"])){echo $rfp["classnum"];} ?></td></tr>
+			<tr><th>Length</th>				<td><?php if(isset($rfp["length"])){echo $rfp["length"];} ?></td></tr>
+			<tr><th>Width</th>				<td><?php if(isset($rfp["height"])){echo $rfp["height"];} ?></td></tr>
+			<tr><th>Height</th>				<td><?php if(isset($rfp["width"])){echo $rfp["width"];}  ?></td></tr>
+			<tr><th>Budget</th>				<td><?php if(isset($rfp["budget"])){echo $rfp["budget"];} ?></td></tr>
+			<tr><th>Completetion Date</th>	<td><?php if(isset($rfp["compdate"])){echo $rfp["compdate"];}?></td></tr>
 		</table>
 
 		<div id="doResponse">Create Response</div>
@@ -39,7 +40,6 @@
 
 </div>
 
-<div id="transDiv"></div>
 
 <div class="pContent" id="slideUp">
  	
@@ -64,7 +64,7 @@
             	<div class="form-group">
                 	<label class="col-xs-3" for="propCost">Proposal Cost</label>
                 	<input type="text" class="form-control" name="propCost" data-parsley-trigger="focusout" 
-                	data-parsley-pattern="/^\d{1,}$/">
+                	data-parsley-pattern="/^\d{1,}\.\d{2}$/">
             	</div>
 		
 				<div class="form-group">

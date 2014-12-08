@@ -107,11 +107,25 @@ class User{
 	public static function getMyAccountInfo(){
 		
 		$db = Database::getDB();
-		$user_collection = $db->users; 
+		$user_collection = $db->VRMusers; 
 		$user_cursor = $user_collection->find(array("userID"=>$_SESSION["userID"]));
 		$myInfo = $user_cursor->getNext();
 	
 		return $myInfo;
+	}
+
+	public function getPreviousResponses(){
+
+		$responses = self::getMyResponses(); 
+		$myRfpIds = [];
+
+		//Get ids of rfps user already responded to
+		foreach($responses as $response){
+			$myRfpIds[] = $response["Rfpnum"];
+		}
+
+		return $myRfpIds;
+
 	}
 
 	//Session related stuff

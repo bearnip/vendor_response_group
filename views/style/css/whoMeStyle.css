@@ -10,7 +10,7 @@ body{
 
 .pContent{
 	position: relative;
-	height:				600px;
+
 	background-color: 	rgba(0,0,0,0.5);
 	color:				white;
 	z-index: 1;
@@ -113,11 +113,12 @@ textarea{
 }
 
 #slideUp{
-	display:none;
+	
 	position:absolute;
 	top:0%;
-	left:15%;
+	left:-70%;
 	width:70%;
+	height:100% !important;
 	background-color: rgba(0,0,0,1);
 	padding:4%;
 	padding-top:0;
@@ -139,7 +140,7 @@ textarea{
 }
 
 #addPartner{
-	position:fixed;
+	position:relative;
 	right:2%;
 	top:10%;
 	border-radius:50%;

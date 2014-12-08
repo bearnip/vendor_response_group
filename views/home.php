@@ -6,14 +6,14 @@
         <div class="col-md-8 pContent">
           <h2 class="sectionTitle">Your Responses</h2>
           <table class="table table-stripeld">
-            <tr><th>RFP Title</th><th>Date Filled</th><th>Status</th></tr>
+            <tr><th>RFP Number</th><th>Title</th><th>Proposed Cost</th></tr>
        
             <?php 
             foreach($myResponses as $response){
+              $rfpId = $response["Rfpnum"] ;
               echo '<tr><td>' . $response["Rfpnum"] . '</td>';
               echo '<td>' . $response["title"] . '</td>';
               echo '<td>' . "$" . $response["cost"] . '</td></tr>';
-
             }
             ?>
           </table>

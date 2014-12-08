@@ -32,14 +32,15 @@
 			 
 
 			$("#doResponse").click(function(){
-				$("#slideUp").fadeIn(600);
+				$("#slideUp").animate({left:"15%"});
 				$("#transDiv").css({backgroundColor:"rgba(0,0,0,.7)"}, 10000);
-				//$("#slideUp").animate({ "top" : "0%"});
-				//$("#slideUp").animate({ "width" : "50%"});
+				
 			});
 
 			$("#closeForm").click(function(){
-				$("#slideUp").fadeOut();
+				$("#slideUp").animate({left:"-70%"});
+				$("#transDiv").css({backgroundColor:"rgba(0,0,0,0)"}, 10000);
+				$("transDiv").css({zIndex: "0"})
 			})
 
 			var i = 1; 

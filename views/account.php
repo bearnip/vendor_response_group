@@ -13,17 +13,6 @@
 	                	value="<?php echo $myInfo["companyName"] ?>">
 	            </div>
 
-	            <!--<div class="form-group">
-	                <label class="col-xs-3" for="companyAddress">Company Address</label>
-	                <input type="text" class="form-control input-sm" name="companyAddress"
-	                value="<?//php echo $myInfo["companyAddr"] ?>">
-	            </div>-->
-
-	            <div class="form-group">
-	                <label class="col-xs-3" for="companyCEO">Company CEO</label>
-	                <input type="text" class="form-control" name="companyCEO"
-	                value="<?php echo $myInfo["companyCEO"] ?>">
-	            </div>
 
 	            <div class="form-group">
 	                <label class="col-xs-3" for="contactName">Contact Name</label>

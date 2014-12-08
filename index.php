@@ -97,7 +97,8 @@ elseif( $action == "viewRfps"){
 		//Get all RFPs
 		$rfp_cursor = Database::getRFPs();
 
-		$rfpArray = []; 
+		$filledRfps = $_SESSION["user"]->getPreviousResponses();
+
 
 		//Display the page containing the RFPs
 		include('views/rfps.php');
@@ -135,6 +136,10 @@ elseif( $action == "submitResponse" ){
 
 	$response = new Response();
 
+
+	//Get all of the vendors responses
+  	$myResponses = $_SESSION["user"]->getMyResponses();
+
 	include('views/home.php');
 	
 }
@@ -146,6 +151,34 @@ elseif( $action == "account" ){
 	$myInfo = $_SESSION["user"]->getMyAccountInfo();
 
 	//Get all user contact info and put in an editable form
+	include('views/account.php');
+
+}
+
+elseif( $action == "editInfo"){
+
+	$companyName = $_POST["companyName"]; 
+	$contactName = $_POST["contactName"]; 
+	$contactNumber = $_POST["contactNumber"]; 
+	$contactEmail = $_POST["contactEmail"];
+
+	$myAccount = $_SESSION["user"]->getMyAccountInfo();
+
+	$myAccount["companyName"] = $companyName;
+	$myAccount["contactName"] = $contactName;
+	$myAccount["contactNum"] = $contactNumber;
+	$myAccount["contactEmail"] = $contactEmail;
+
+
+	$db = Database::getDB();
+	$vendors = $db->VRMusers;
+
+	$params = array("userID"=>$_SESSION["userID"]);
+
+	$vendors->update($params, $myAccount);
+
+	$myInfo = $_SESSION["user"]->getMyAccountInfo();
+
 	include('views/account.php');
 
 }

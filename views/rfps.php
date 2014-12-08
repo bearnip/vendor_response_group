@@ -14,22 +14,24 @@
         	<?php 
         	foreach($rfp_cursor as $rfp){
 
+            if(!in_array( $rfp["rfpnum"], $filledRfps ) ){
         		$hq = ($rfp["audio"] == true ? "Yes" : "No");
 
         		echo "<tr>";
-        		//echo "<td>" . $rfp["RfpNum"] . "</td>"; 
+      
         		echo "<td>" . $rfp["summary"] . "</td>";
-                echo "<td>" . $rfp["projection"][0] . "</td>";
-        		echo "<td>" . $rfp["length"] . "</td>";
-                echo "<td>" . $rfp["width"] . "</td>";
-        		echo "<td>" . $rfp["compdate"] . "</td>"; 
-        		//echo "<td>" . $rfp["size"]["length"] . "x" . $rfp["size"]["width"] .  "x" . $rfp["size"]["height"] . "</td>";
-				echo '<td><form action = "." method="POST">
-							<input type="hidden" name="action" value="viewSingleRfp">
-							<input type="hidden" name="RfpNum" value="' . $rfp["rfpnum"] . '">
-							<input type="submit" class="btn respondButton" value="View">
-						</form></td></tr>'; 
-            
+
+            echo "<td>" . $rfp["projection"][0] . "</td>";
+        		echo "<td>" . $rfp["length"] .        "</td>";
+            echo "<td>" . $rfp["width"] .         "</td>";
+        		echo "<td>" . $rfp["compdate"] .      "</td>"; 
+        	
+    				echo '<td><form action = "." method="POST">
+							 <input type="hidden" name="action" value="viewSingleRfp">
+							 <input type="hidden" name="RfpNum" value="' . $rfp["rfpnum"] . '">
+							 <input type="submit" class="btn respondButton" value="View">
+						  </form></td></tr>'; 
+            }
 
         	}?>
 
