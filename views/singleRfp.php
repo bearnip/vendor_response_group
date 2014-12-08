@@ -19,7 +19,7 @@
 			<tr><th>Audio</th>				<td><?php if(isset($rfp["audio"])){ $rfp["audio"];} ?></td></tr>
 			<tr><th>Seats</th>				<td><?php if(isset($rfp["seats"])){echo $rfp["seats"];} ?></td></tr>
 			<tr><th>Projection</th>			<td><?php if(isset($rfp["projection"])){echo $rfp["projection"][0];} ?></td></tr>
-			<tr><th>Podium</th>				<td><?php if(isset($rfp["podium"][0])){echo $rfp["podium"][0];} ?></td></tr>
+			<tr>	<th>Podium</th>				<td><?php if(isset($rfp["podium"][0])){echo $rfp["podium"][0];} ?></td></tr>
 			<tr><th>Class Number</th>		<td><?php if(isset($rfp["classnum"])){echo $rfp["classnum"];} ?></td></tr>
 			<tr><th>Length</th>				<td><?php if(isset($rfp["length"])){echo $rfp["length"];} ?></td></tr>
 			<tr><th>Width</th>				<td><?php if(isset($rfp["height"])){echo $rfp["height"];} ?></td></tr>
@@ -73,23 +73,38 @@
                	 	 data-parsley-trigger="focusout" ></textarea>
             	</div>
 
-            	<div id="vendorPartnerInputs">
-             		<div class="form-group">
-             	   		<label class="col-xs-3" for="vP0">Vendor Partner</label>
-             	   		<input type="text" class="form-control" name="vP0">
-            		</div>
-            	</div>
-            	
-            	<div id="addPartner" alt="add partner"><h3>+</h3></div>
 
-            	 <h3>Add File</h3>
-           		<input type="file" name="responseFile">
+            	<input type="file" name="responseFile" id="fileButton">
            		<input id="submitForm" type="submit" class="btn btn-default tab" value="submit">
 
 
 			</div><!-- End of middle section -->
+
+
+            <div id="right">
+
+            	
+
+            	<div id="vendorPartnerInputs">
+             		<div class="form-group">
+             	   		<label class="col-xs-3" for="vP0">Vendor Partner</label>
+             	  		<input type="text" class="form-control" name="vP0">
+            		</div>
+            		
+            	</div>
+            	
+            	
+            </div>
+
+
+
+
            	
 		</form>
+
+		 <div id="addButtonDiv">
+            	<div id="addPartner" alt="add partner"><h3>+</h3></div>
+            </div>
 </div>
 
 
