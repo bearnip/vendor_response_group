@@ -97,6 +97,8 @@ elseif( $action == "viewRfps"){
 		//Get all RFPs
 		$rfp_cursor = Database::getRFPs();
 
+		$rfpArray = []; 
+
 		//Display the page containing the RFPs
 		include('views/rfps.php');
 
@@ -129,6 +131,7 @@ elseif( $action == "viewSingleRfp"){
 
 //If they're submitting a response to an RFP
 elseif( $action == "submitResponse" ){
+
 
 	$response = new Response();
 
